@@ -16,6 +16,7 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from argparse import ArgumentParser
 from pdb import set_trace
+import fickling
 
 
 def handle_missing_values(train, test):
@@ -180,7 +181,7 @@ if __name__ == '__main__':
     parsed_args = parser.parse_args()
 
     # Load data
-    data = pickle.load(open(parsed_args.input_filename, 'rb'))
+    data = fickling.load(open(parsed_args.input_filename, 'rb'))
     train = data['train']
     test = data['test']
     col_types = data['col_types']
